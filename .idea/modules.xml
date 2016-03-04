@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../ApiApplication/app/ApiApplication.iml" filepath="$PROJECT_DIR$/../ApiApplication/app/ApiApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../EditorApplication/app/EditorApplication.iml" filepath="$PROJECT_DIR$/../EditorApplication/app/EditorApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/MainApp.iml" filepath="$PROJECT_DIR$/MainApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

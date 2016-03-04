@@ -1,1 +1,3 @@
-include ':app'
+include ':ApiApplication', ':EditorApplication', ':app'
+project(':ApiApplication').projectDir = new File(settingsDir, '../ApiApplication/app')
+project(':EditorApplication').projectDir = new File(settingsDir, '../EditorApplication/app')
