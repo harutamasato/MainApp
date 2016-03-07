@@ -5,6 +5,7 @@ machine:
     ANDROID_HOME: /usr/local/android-sdk-linux
     JAVA_OPTS: "-Xmx1048m -XX:MaxPermSize=512m"
 
+#
   checkout:
     post:
       - git clone "git@github.com:harutamasato/ApiApplication.git" .
