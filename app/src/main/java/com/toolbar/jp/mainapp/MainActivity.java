@@ -1,7 +1,11 @@
 package com.toolbar.jp.mainapp;
 
+import com.toolbar.jp.apiapplication.ApiHoge;
+import com.toolbar.jp.editorapplication.EditorHoge;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -34,5 +38,13 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        EditorHoge hoge = new EditorHoge("huga");
+        ApiHoge huga = new ApiHoge("hoge");
+        Log.d("javalog", "editor->"+hoge.getHoge()+" api->"+huga.getHuga());
     }
 }
