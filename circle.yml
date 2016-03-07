@@ -7,6 +7,10 @@ machine:
 
   dependencies:
     pre:
+      - git clone "git@github.com:harutamasato/ApiApplication.git" .
+      - mv ApiApplication ../
+      - git clone "git@github.com:harutamasato/EditorApplication.git" .
+      - mv EditorApplication ../
       - echo y | android update sdk --no-ui --filter android-23,build-tools-23.0.1
       - echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
     override:
