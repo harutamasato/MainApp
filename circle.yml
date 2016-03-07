@@ -5,12 +5,11 @@ machine:
     ANDROID_HOME: /usr/local/android-sdk-linux
     JAVA_OPTS: "-Xmx1048m -XX:MaxPermSize=512m"
 
-  # hog
   checkout:
     post:
-      - git clone "https://${GITHUB_TOKEN}:x-oauth-basic@github.com:harutamasato/ApiApplication.git" .
+      - git clone "git@github.com:harutamasato/ApiApplication.git" .
       - mv ApiApplication ../
-      - git clone "https://${GITHUB_TOKEN}:x-oauth-basic@github.com:harutamasato/EditorApplication.git" .
+      - git clone "git@github.com:harutamasato/EditorApplication.git" .
       - mv EditorApplication ../
 
   dependencies:
