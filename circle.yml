@@ -5,19 +5,17 @@ machine:
     ANDROID_HOME: /usr/local/android-sdk-linux
     JAVA_OPTS: "-Xmx1048m -XX:MaxPermSize=512m"
 
-  dependencies:
-    pre:
+  checkout:
       - git clone "git@github.com:harutamasato/ApiApplication.git" .
       - mv ApiApplication ../
       - git clone "git@github.com:harutamasato/EditorApplication.git" .
       - mv EditorApplication ../
+
+  dependencies:
+    pre:
       - echo y | android update sdk --no-ui --filter android-23,build-tools-23.0.1
       - echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
     override:
-      - git clone "git@github.com:harutamasato/ApiApplication.git" .
-      - mv ApiApplication ../
-      - git clone "git@github.com:harutamasato/EditorApplication.git" .
-      - mv EditorApplication ../
       - ./gradlew dependencies
 
   test:
