@@ -1,5 +1,6 @@
 package com.toolbar.jp.mainapp;
 
+
 import com.toolbar.jp.apiapplication.ApiHoge;
 import com.toolbar.jp.editorapplication.EditorHoge;
 
