@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -44,8 +45,10 @@ public class MainActivity extends Activity {
     @Override
     public void onResume() {
         super.onResume();
+        TextView textView = (TextView) findViewById(R.id.hoge);
         EditorHoge hoge = new EditorHoge("huga");
         ApiHoge huga = new ApiHoge("hoge");
         Log.d("javalog", "editor->"+hoge.getHoge()+" api->"+huga.getHuga());
+        textView.setText("huffff"+hoge.getHoge()+" api->"+huga.getHuga());
     }
 }
