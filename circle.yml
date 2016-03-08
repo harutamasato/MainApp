@@ -19,7 +19,7 @@ dependencies:
     - echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
   override:
     - bundle install
-    - ./gradlew dependencies
+#- ./gradlew dependencies
 
 test:
   override:
@@ -28,6 +28,6 @@ test:
 
 deployment:
   beta:
-    branch: master
+    branch: develop
     commands:
      - bundle exec fastlane beta
