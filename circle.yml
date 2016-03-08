@@ -5,27 +5,29 @@ machine:
     ANDROID_HOME: /usr/local/android-sdk-linux
     JAVA_OPTS: "-Xmx1048m -XX:MaxPermSize=512m"
 
-  checkout:
-    post:
-      - git clone "git@github.com:harutamasato/ApiApplication.git" .
-      - mv ApiApplication ../
-      - git clone "git@github.com:harutamasato/EditorApplication.git" .
-      - mv EditorApplication ../
+checkout:
+  post:
+    - git clone "git@github.com:harutamasato/ApiApplication.git" .
+    - mv ApiApplication ../
+    - git clone "git@github.com:harutamasato/EditorApplication.git" .
+    - mv EditorApplication ../
 
-  dependencies:
-    pre:
-      - echo y | android update sdk --no-ui --filter android-23,build-tools-23.0.1
-      - echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
-    override:
-      - ./gradlew dependencies
+dependencies:
+  pre:
+    - gem install bundler --pre
+    - echo y | android update sdk --no-ui --filter android-23,build-tools-23.0.1
+    - echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
+  override:
+    - bundle install
+    - ./gradlew dependencies
 
-  test:
-    override:
-    - echo "Nothing to do here"
-    - ./gradlew test
+test:
+  override:
+  - echo "Nothing to do here"
+#  - ./gradlew test
 
-  deployment:
-    master:
-      branch: master
-      commands:
-       - bundle exec fastlane beta
+deployment:
+  beta:
+    branch: master
+    commands:
+     - bundle exec fastlane beta
