@@ -11,7 +11,7 @@ checkout:
     - mv ApiApplication ../
     - git clone -b develop git@github.com:harutamasato/EditorApplication.git
     - mv EditorApplication ../
-# hoge123
+# hoge12
 dependencies:
   pre:
     - gem install bundler --pre
